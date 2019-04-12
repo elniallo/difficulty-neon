@@ -1,3 +1,7 @@
+matrix:
+  allow_failures:
+    - os: windows
+
 os:
   - osx
   - linux
