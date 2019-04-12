@@ -7,8 +7,9 @@
   "author": "Niall Moore <niall@hycon.io>",
   "license": "MIT",
   "dependencies": {
+    "@amilajack/node-pre-gyp": "github:amilajack/node-pre-gyp#neon-compat",
     "neon-cli": "^0.2.0",
-    "node-pre-gyp": "github:amilajack/node-pre-gyp",
+    "node-pre-gyp": "github:amilajack/node-pre-gyp#neon-compat",
     "node-pre-gyp-github": "^1.4.3"
   },
   "repository": {
