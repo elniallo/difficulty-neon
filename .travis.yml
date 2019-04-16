@@ -18,6 +18,7 @@ node_js:
 rust: stable
 
 cache:
+  - yarn: true
   - cargo: true
 
 before_install:
@@ -34,8 +35,10 @@ before_install:
   # Install global NPM packages
   - node -v
   - npm -v
+  - yarn global add yarn@latest
+  - yarn
 
 script: 
   - COMMIT_MESSAGE=$(git log --format=%B --no-merges -n 1 | tr -d '\n')
-  - if [[ ${COMMIT_MESSAGE} =~ "[publish binary]" ]]; then npm run upload-binary || exit 0; fi;
+  - if [[ ${COMMIT_MESSAGE} =~ "[publish binary]" ]]; then yarn upload-binary || exit 0; fi;
 
