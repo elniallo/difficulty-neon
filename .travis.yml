@@ -35,6 +35,7 @@ before_install:
   - npm -v
   - yarn global add yarn@latest
   - yarn
+  - npm install
 
 script: 
   - COMMIT_MESSAGE=$(git log --format=%B --no-merges -n 1 | tr -d '\n')
