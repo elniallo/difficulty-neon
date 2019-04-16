@@ -20,11 +20,11 @@ before_install:
   # Install Rust and Cargo
   - |
     if [ "$TRAVIS_OS_NAME" == "windows" ]; then
-        - export NVS_HOME=$ProgramData/nvs
-        - git clone --single-branch https://github.com/jasongin/nvs $NVS_HOME
-        - source $NVS_HOME/nvs.sh
-        - nvs --version
-       - nvs add $TRAVIS_NODE_VERSION && nvs use $TRAVIS_NODE_VERSION 
+        export NVS_HOME=$ProgramData/nvs
+        git clone --single-branch https://github.com/jasongin/nvs $NVS_HOME
+        source $NVS_HOME/nvs.sh
+        nvs --version
+       nvs add $TRAVIS_NODE_VERSION && nvs use $TRAVIS_NODE_VERSION 
     else
         curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
         nvm install $TRAVIS_NODE_VERSION && nvm use $TRAVIS_NODE_VERSION
