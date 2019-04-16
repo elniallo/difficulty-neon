@@ -7,16 +7,12 @@ os:
   - linux
   - windows
 
-language: 
-  - node_js
-  - rust
-
-node_js: 
-  - node
-  - 10
+language: rust
 
 rust: stable
 
+env: 
+  - TRAVIS_NODE_VERSION="11"
 cache:
   - yarn: true
   - cargo: true
@@ -33,6 +29,8 @@ before_install:
       source "$HOME/.cargo/env"
     fi
   # Install global NPM packages
+  - nvm install $TRAVIS_NODE_VERSION
+  - nvm use ${TRAVIS_NODE_VERSION}
   - node -v
   - npm -v
   - yarn global add yarn@latest
