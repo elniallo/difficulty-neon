@@ -29,10 +29,6 @@ before_install:
         curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
         nvm install $TRAVIS_NODE_VERSION && nvm use $TRAVIS_NODE_VERSION
     fi
-    - |
-    if [ "$TRAVIS_OS_NAME" == "osx" ]; then
-        brew install yarn
-    fi
   # Install global NPM packages
   - node -v
   - npm -v
