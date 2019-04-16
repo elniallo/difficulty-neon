@@ -20,14 +20,15 @@ before_install:
   # Install Rust and Cargo
   - |
     if [ "$TRAVIS_OS_NAME" == "windows" ]; then
-      curl -sSf https://build.travis-ci.org/files/rustup-init.sh | sh -s -- --default-toolchain=stable -y
+      choco install rust
+      export PATH="$HOME/.cargo/bin:$PATH" && /
+      source "$HOME/.cargo/env/"
     else
       curl https://sh.rustup.rs -sSf > /tmp/rustup.sh && /
       sh /tmp/rustup.sh -y
-    fi
-  - | 
       export PATH="$HOME/.cargo/bin:$PATH" && /
       source "$HOME/.cargo/env"
+    fi
   # Install global NPM packages
   - node -v
   - npm -v
