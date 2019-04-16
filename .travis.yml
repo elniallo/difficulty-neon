@@ -7,12 +7,11 @@ os:
   - linux
   - windows
 
-language: rust
+language: node_js
+node_js: 
+  - node
+  - 10
 
-rust: stable
-
-env: 
-  - TRAVIS_NODE_VERSION="11"
 cache:
   - yarn: true
   - cargo: true
@@ -21,7 +20,7 @@ before_install:
   # Install Rust and Cargo
   - |
     if [ "$TRAVIS_OS_NAME" == "windows" ]; then
-      choco install rust
+      curl -sSf https://build.travis-ci.org/files/rustup-init.sh | sh -s -- --default-toolchain=stable -y
     else
       curl https://sh.rustup.rs -sSf > /tmp/rustup.sh && /
       sh /tmp/rustup.sh -y && /
@@ -29,13 +28,10 @@ before_install:
       source "$HOME/.cargo/env"
     fi
   # Install global NPM packages
-  - nvm install $TRAVIS_NODE_VERSION
-  - nvm use ${TRAVIS_NODE_VERSION}
   - node -v
   - npm -v
   - yarn global add yarn@latest
   - yarn
-  - npm install
 
 script: 
   - COMMIT_MESSAGE=$(git log --format=%B --no-merges -n 1 | tr -d '\n')
