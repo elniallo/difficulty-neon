@@ -1,13 +1,12 @@
 {
   "name": "difficulty-adjuster",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "author": "Niall Moore <niall@hycon.io>",
   "license": "MIT",
   "dependencies": {
-    "@amilajack/node-pre-gyp": "github:amilajack/node-pre-gyp#neon-compat",
     "neon-cli": "^0.2.0",
     "node-pre-gyp": "github:amilajack/node-pre-gyp#neon-compat",
     "node-pre-gyp-github": "^1.4.3"
