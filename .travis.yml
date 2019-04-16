@@ -20,7 +20,7 @@ before_install:
   # Install Rust and Cargo
   - |
     if [ "$TRAVIS_OS_NAME" == "windows" ]; then
-      choco install rust
+      choco install rust && /
       export PATH="$HOME/.cargo/bin:$PATH" && /
       source "$HOME/.cargo/env/"
     else
