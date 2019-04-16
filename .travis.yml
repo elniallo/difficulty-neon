@@ -32,6 +32,7 @@ before_install:
   # Install global NPM packages
   - node -v
   - npm -v
+  - npm install -g yarn
   - yarn global add yarn@latest
   - yarn
 
