@@ -8,7 +8,7 @@
   "license": "MIT",
   "dependencies": {
     "neon-cli": "^0.2.0",
-    "node-pre-gyp": "github:amilajack/node-pre-gyp#neon-compat",
+    "node-pre-gyp": "^0.12.0",
     "node-pre-gyp-github": "^1.4.3"
   },
   "repository": {
@@ -29,7 +29,6 @@
     "host": "https://github.com/elniallo/difficulty-neon/releases/download/",
     "remote_path": "{version}",
     "package_name": "{node_abi}-{platform}-{arch}.tar.gz",
-    "module_path": "./native/",
-    "pkg_path": "."
+    "module_path": "./native/"
   }
 }
