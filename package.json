@@ -29,7 +29,7 @@
     "host": "https://github.com/elniallo/difficulty-neon/releases/download/",
     "remote_path": "{version}",
     "package_name": "{node_abi}-{platform}-{arch}.tar.gz",
-    "module_path": "./native",
+    "module_path": "./native/",
     "pkg_path": "."
   }
 }
