@@ -41,8 +41,7 @@ before_install:
   - yarn
 
 script: 
-  - cd lib && mkdir native
-  - cd .. && ls
+  - cd lib/native && ls
   - COMMIT_MESSAGE=$(git log --format=%B --no-merges -n 1 | tr -d '\n')
   - if [[ ${COMMIT_MESSAGE} =~ "[publish binary]" ]]; then yarn upload-binary || exit 0; fi;
 
